@@ -11,18 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('auth.usuarios', function (Blueprint $table) {
+        Schema::create('lote.lotes', function (Blueprint $table) {
             $table->id();
-            $table->text('nombre')->nullable();
-            $table->text('apellidos')->nullable();
-            $table->text('email')->nullable()->unique();
-            $table->text('telefono')->nullable()->unique();
-            $table->integer('sig_id')->nullable();
-            
+
+            $table->foreignId('manzana_id')
+                ->constrained('geo.manzanas');
+
+            $table->string('clave');
+            $table->string('nombre');
+            $table->string('clave_catastral');
+
+            $table->boolean('is_active')->default(true);
+
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index('created_at');
+            $table->index('nombre');
+            $table->index('clave');
         });
     }
 
@@ -31,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('auth.usuarios');
+        Schema::dropIfExists('lote.lotes');
     }
 };

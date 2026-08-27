@@ -11,18 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('auth.usuarios', function (Blueprint $table) {
+        Schema::create('geo.estados', function (Blueprint $table) {
             $table->id();
-            $table->text('nombre')->nullable();
-            $table->text('apellidos')->nullable();
-            $table->text('email')->nullable()->unique();
-            $table->text('telefono')->nullable()->unique();
-            $table->integer('sig_id')->nullable();
-            
+            $table->string('clave')->unique();
+            $table->string('nombre');
+            $table->boolean('is_active')->default(true);
+
             $table->timestamps();
             $table->softDeletes();
-
-            $table->index('created_at');
         });
     }
 
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('auth.usuarios');
+        Schema::dropIfExists('geo.estados');
     }
 };
