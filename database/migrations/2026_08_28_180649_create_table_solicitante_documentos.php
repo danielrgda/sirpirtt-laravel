@@ -11,12 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documento.tipos_requisitos', function (Blueprint $table) {
+        Schema::create('solicitante.documentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('documento_tipo_id')
-                ->constrained('documento.tipos');
-            $table->foreignId('documento_requisito_id')
-                ->constrained('documento.requisitos');
+
+            $table->foreignId('solicitante_id')
+                ->constrained('solicitante.solicitantes');
+
+            $table->foreignId('documento_id')
+                ->constrained('documento.documentos');
+
+            $table->boolean('is_active')->default(true);
+
             $table->timestamps();
             $table->softDeletes();
         });
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documento.tipos_requisitos');
+        Schema::dropIfExists('solicitante.documentos');
     }
 };

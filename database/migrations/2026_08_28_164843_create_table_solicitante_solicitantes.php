@@ -11,18 +11,25 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('geo.localidades', function (Blueprint $table) {
+        Schema::create('solicitante.solicitantes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('municipio_id')
-                ->constrained('geo.municipios');
-            $table->string('clave')->nullable();
-            $table->foreignId('tipo_localidad_id')
-                ->constrained('geo.tipos_localidades');
+
             $table->string('nombre');
+            $table->string('apellido_p');
+            $table->string('apellido_m');
+            $table->string('curp');
+
             $table->boolean('is_active')->default(true);
 
             $table->timestamps();
-            $table->softDeletes(); 
+            $table->softDeletes();
+
+            $table->unique([
+                'nombre',
+                'apellido_p',
+                'apellido_m',
+                'curp'
+            ]);
         });
     }
 
@@ -31,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('geo.localidades');
+        Schema::dropIfExists('solicitante.solicitantes');
     }
 };
