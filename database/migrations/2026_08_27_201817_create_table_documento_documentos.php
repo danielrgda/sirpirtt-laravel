@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('documento.documentos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipo_id')
-                ->constrained('documento.tipos');
+            $table->foreignId('requisito_id')
+                ->constrained('documento.requisitos');
             $table->string('nombre_archivo');
             $table->string('url');
             $table->string('mime');

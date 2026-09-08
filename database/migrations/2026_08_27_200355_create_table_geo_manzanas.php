@@ -13,14 +13,19 @@ return new class extends Migration
     {
         Schema::create('geo.manzanas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('colonia_id')
-                ->constrained('geo.colonias');
-            $table->string('clave')->unique();
+            $table->foreignId('asentamiento_id')
+                ->constrained('geo.asentamientos');
+            $table->string('clave');
             $table->string('nombre');
             $table->boolean('is_active')->default(true);
 
             $table->timestamps();
             $table->softDeletes(); 
+            
+            $table->unique(
+                ['asentamiento_id', 'clave'],
+                'manzanas_asentamiento_clave_unique'
+            );
         });
     }
 

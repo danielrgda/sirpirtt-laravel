@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Geo\Localidad;
 use Illuminate\Database\Seeder;
 
-class LocalidadSeeder extends Seeder
+class GeoLocalidadSeeder extends Seeder
 {
     public function run(): void
     {

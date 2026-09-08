@@ -2,14 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Geo\TiposLocalidades;
+use App\Models\Geo\TipoLocalidad;
 use Illuminate\Database\Seeder;
 
-class TiposLocalidadesSeeder extends Seeder
+class GeoTipoLocalidadSeeder extends Seeder
 {
     public function run(): void
     {
-        $localidades = [
+        $tipos_localidades = [
             [
                 'nombre' => 'urbano',
             ],
@@ -18,8 +18,8 @@ class TiposLocalidadesSeeder extends Seeder
             ],
         ];
 
-        foreach ($localidades as $localidad) {
-            TiposLocalidades::create($localidad);
+        foreach ($tipos_localidades as $tipo_localidad) {
+            TipoLocalidad::create($tipo_localidad);
         }
     }
 }

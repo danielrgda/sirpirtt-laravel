@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->string('clave');
             $table->string('nombre');
-            $table->string('clave_catastral');
+            $table->string('clave_catastral')->nullable();
 
             $table->boolean('is_active')->default(true);
 

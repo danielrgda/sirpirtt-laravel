@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Models\Geo;
+namespace App\Models\Documento;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Geo\Municipio;
 
-class TiposLocalidades extends Model
+class Catalogo extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'geo.tipos_localidades';
+    protected $table = 'documento.catalogos';
 
     protected $fillable = [
         'nombre',
-        'is_active'
+        'descripcion',
+        'is_active',
     ];
 
     protected function casts(): array

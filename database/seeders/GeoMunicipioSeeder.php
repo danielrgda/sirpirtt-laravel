@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Geo\Municipio;
 use Illuminate\Database\Seeder;
 
-class MunicipioSeeder extends Seeder
+class GeoMunicipioSeeder extends Seeder
 {
     public function run(): void
     {

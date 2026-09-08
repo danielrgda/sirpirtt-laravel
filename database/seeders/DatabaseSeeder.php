@@ -16,10 +16,20 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            EstadoSeeder::class,
-            MunicipioSeeder::class,
-            TiposLocalidadesSeeder::class,
-            LocalidadSeeder::class,
+            GeoEstadoSeeder::class,
+            GeoMunicipioSeeder::class,
+            GeoTipoLocalidadSeeder::class,
+            GeoTipoAsentamientoSeeder::class,
+            GeoLocalidadSeeder::class,
+            GeoAsentamientoSeeder::class,
+            GeoManzanaSeeder::class,
+            LoteLoteSeeder::class, 
+            DocumentoCatalogoSeeder::class,
+            DocumentoTipoSeeder::class,
+            DocumentoRequisitoSeeder::class,
+            DocumentoDocumentoSeeder::class,
+            SolicitanteSolicitanteSeeder::class,
+            SolicitanteDocumentoSeeder::class,
         ]);
     }
 }

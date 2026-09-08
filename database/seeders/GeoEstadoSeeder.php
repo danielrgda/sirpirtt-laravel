@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Geo\Estado;
 use Illuminate\Database\Seeder;
 
-class EstadoSeeder extends Seeder
+class GeoEstadoSeeder extends Seeder
 {
     public function run(): void
     {

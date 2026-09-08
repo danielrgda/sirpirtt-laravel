@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('geo.colonias', function (Blueprint $table) {
+        Schema::create('geo.tipos_asentamientos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('localidad_id')
-                ->constrained('geo.localidades');
-            $table->string('clave')->unique();
             $table->string('nombre');
             $table->boolean('is_active')->default(true);
-
             $table->timestamps();
-            $table->softDeletes(); 
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('geo.colonias');
+        Schema::dropIfExists('geo.tipos_asentamientos');
     }
 };
