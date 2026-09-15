@@ -13,6 +13,8 @@ class Documento extends Model
 
     protected $fillable = [
         'requisito_id',
+        'entidad_id',
+        'entidad',
         'nombre_archivo',
         'url',
         'mime',

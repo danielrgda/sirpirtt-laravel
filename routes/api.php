@@ -2,12 +2,9 @@
 
 use App\Models\Usuario;
 use App\Models\Geo\Estado;
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\Auth\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/usuarios', function () {
-    return Usuario::all();
-});
 
 Route::get('/estados', function () {
     return Estado::all();

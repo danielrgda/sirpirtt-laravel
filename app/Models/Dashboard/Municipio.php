@@ -1,24 +1,22 @@
 <?php
 
-namespace App\Models\Expediente;
+namespace App\Models\Dashboard;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Expediente extends Model
+class Municipio extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'expediente.expedientes';
+    protected $table = 'dashboard.municipios';
 
     protected $fillable = [
-        'clave_expediente',
-        'solicitante_id',
-        'lote_id',
-        'tipo_id',
-        'estado_id',
-        'anio',
-        'is_active',
+        'municipio_id',
+        'popup_posx',
+        'popup_posy',
+        'path',
+        'popup_direction',
     ];
 
     protected function casts(): array

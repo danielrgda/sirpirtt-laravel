@@ -12,14 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('dashboard.municipios', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('municipio_id')
                 ->primary()
                 ->constrained('geo.municipios');
 
             $table->integer('popup_posx');
             $table->integer('popup_posy');
-            $table->string('path');
+            $table->text('path');
             $table->boolean('popup_direction');
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -27,9 +27,12 @@ class DatabaseSeeder extends Seeder
             DocumentoCatalogoSeeder::class,
             DocumentoTipoSeeder::class,
             DocumentoRequisitoSeeder::class,
-            DocumentoDocumentoSeeder::class,
             SolicitanteSolicitanteSeeder::class,
-            SolicitanteDocumentoSeeder::class,
+            ExpedienteTipoSeeder::class,
+            ExpedienteEstadoSeeder::class,
+            ExpedienteExpedienteSeeder::class,
+            DocumentoDocumentoSeeder::class,
+            DashboardMunicipioSeeder::class,
         ]);
     }
 }

@@ -12,12 +12,14 @@ class DocumentoDocumentoSeeder extends Seeder
         $documentos = [
             [
                 'requisito_id' => '1',
+                'entidad_id' => '1',
+                'entidad' => 'expediente',
                 'nombre_archivo' => 'eraboi.exe.bat.ini.reg.txt',
                 'url' => 'asd/asd/asd',
                 'mime' => 'tequiste/lleison',
                 'size_bytes' => '91273918273',
                 'sha256' => 'nosequevaaqui',
-                'notas' => 'obviamente es un test' 
+                'notas' => 'obviamente es un test',
             ],
         ];
 

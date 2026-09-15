@@ -17,7 +17,9 @@ return new class extends Migration
             $table->text('apellidos')->nullable();
             $table->text('email')->nullable()->unique();
             $table->text('telefono')->nullable()->unique();
+            $table->text('sig_usuario')->nullable();
             $table->integer('sig_id');
+            $table->integer('responsabilidad_id');
             
             $table->timestamps();
             $table->softDeletes();

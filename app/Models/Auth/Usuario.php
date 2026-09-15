@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Auth;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,5 +16,7 @@ class Usuario extends Model
         'email',
         'telefono',
         'sig_id',
+        'sig_usuario',
+        'responsabilidad_id',
     ];
 }

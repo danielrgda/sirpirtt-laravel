@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models\Solicitante;
+namespace App\Models\Expediente;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SolicitanteDocumento extends Model
+class Estado extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'solicitante.documentos';
+    protected $table = 'expediente.estados';
 
     protected $fillable = [
-        'solicitante_id',
-        'documento_id',
+        'nombre',
+        'descripcion',
         'is_active',
     ];
 

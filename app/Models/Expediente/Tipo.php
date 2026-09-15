@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models\Lote;
+namespace App\Models\Expediente;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class LoteDocumento extends Model
+class Tipo extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'lote.documentos';
+    protected $table = 'expediente.tipos';
 
     protected $fillable = [
-        'lote_id',
-        'documento_id',
+        'nombre',
+        'descripcion',
         'is_active',
     ];
 
