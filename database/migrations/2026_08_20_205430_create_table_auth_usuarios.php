@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('auth.usuarios', function (Blueprint $table) {
             $table->id();
             $table->text('nombre')->nullable();
-            $table->text('apellidos')->nullable();
-            $table->text('email')->nullable()->unique();
+            $table->text('email')->nullable();
             $table->text('telefono')->nullable()->unique();
-            $table->text('sig_usuario')->nullable();
+            $table->string('sig_usuario');
             $table->integer('sig_id');
             $table->integer('responsabilidad_id');
+
+            $table->boolean('popup_nuevo')->default(true);
             
             $table->timestamps();
             $table->softDeletes();

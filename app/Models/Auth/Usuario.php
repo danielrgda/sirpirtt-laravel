@@ -12,11 +12,11 @@ class Usuario extends Model
     protected $table = 'auth.usuarios';
     protected $fillable = [
         'nombre',
-        'apellidos',
         'email',
         'telefono',
         'sig_id',
         'sig_usuario',
         'responsabilidad_id',
+        'popup_nuevo'
     ];
 }
